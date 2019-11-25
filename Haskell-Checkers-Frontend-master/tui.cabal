@@ -1,0 +1,48 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 40d3488a57c7f2d113e4167035a3cd7704e3b1c5aa20a98634d10a58119d6892
+
+name:           tui
+version:        0.0.0.1
+homepage:       https://github.com/benjamin-macadam/Haskell-Checkers-Frontend#readme
+bug-reports:    https://github.com/benjamin-macadam/Haskell-Checkers-Frontend/issues
+license:        MIT
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/benjamin-macadam/Haskell-Checkers-Frontend
+
+library
+  exposed-modules:
+      Checkers
+      CheckersJaskaranSidhu
+      GameLogic
+  other-modules:
+      Paths_tui
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , brick
+    , cursor
+    , directory
+    , microlens-platform
+    , vty
+  default-language: Haskell2010
+
+executable tui
+  main-is: Main.hs
+  other-modules:
+      Paths_tui
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , tui
+  default-language: Haskell2010
